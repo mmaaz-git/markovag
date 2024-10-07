@@ -5,7 +5,20 @@ Exact sensitivity analysis of Markov reward processes via algebraic geometry
 
 `markovag` is a Python package for performing sensitivity analyses in cost-effectiveness analysis with algebraic geometry. The basic idea is that all such analyses can be reformulated as systems of polynomial inequalities. We can then construct a cylindrical algebraic decomposition (CAD) of this system in order to determine the entire parameter space over which our objective holds.
 
-The folder `markovag/` contains the `markovag` Python package. To use it, you can either install via `pip install .` while in the root directory, or place the `markovag/` at the same level as your code files. The package contains two modules: `markovag.markov`, contained in `markovag/markov.py`, which allows for doing cost-effectiveness analyses symbolically, and `markovag.cad`, contained in `markovag/cad.py`, which actually constructs the CAD for your sensitivity analysis. You can learn how to use both modules by reading the Jupyter notebooks contained in `examples/`, which are `markov.ipynb` and `cad.ipynb`. These contain numerous examples and explanation provided. Note that to run the examples or the case studies, `markovag` must have been installed or the directory should be on your system path (clunky) for the imports to work.
+The folder `markovag/` contains the `markovag` Python package. To use it, you can either install via `pip install .` while in the root directory, or place the `markovag/` at the same level as your code files. Namely, assume this repository is in `~` (e.g., after `git clone`) Then, from `~`, do the following commands:
+
+```
+cd markovag
+pip install .
+```
+
+You can see that it works now by, e.g.:
+
+```
+python -c "from markovag import markov; print(markov.parse_matrix(['0.5', '0.5', '0']))"
+```
+
+The package contains two modules: `markovag.markov`, contained in `markovag/markov.py`, which allows for doing cost-effectiveness analyses symbolically, and `markovag.cad`, contained in `markovag/cad.py`, which actually constructs the CAD for your sensitivity analysis. You can learn how to use both modules by reading the Jupyter notebooks contained in `examples/`, which are `markov.ipynb` and `cad.ipynb`. These contain numerous examples and explanation provided. Note that to run the examples or the case studies, `markovag` must have been installed or the directory should be on your system path (clunky) for the imports to work.
 
 ## Reproducing the case studies
 
